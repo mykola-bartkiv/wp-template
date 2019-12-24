@@ -158,8 +158,24 @@
   &:-ms-input-placeholder      { @content; }
 }
 
-@mixin hover {
-  &:active {@content}
+@mixin hover($color: #000, $height: 1px) {
+  position: relative;
+  display: inline-block;
+  &:before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    width: 0%;
+    height: $height;
+    background: $color;
+    @include transition();
+  }
+  &:hover {
+    &:before {
+      width: 100%;
+    }
+  }
 }
 
 //Using @include declare-font('FontName', 'font-filename', 400, font-style);

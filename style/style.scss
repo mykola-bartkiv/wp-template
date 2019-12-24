@@ -1,0 +1,21 @@
+@import 'components/mixins';
+
+//@include declare-font('Proxima Nova', 'proxima-nova/ProximaNova-Bold', 700);
+//@include declare-font('Proxima Nova', 'proxima-nova/ProximaNova-Regular', 400);
+
+$table: 1024px;
+$sm: 768px;
+$xs: 480px;
+
+$w: 1140px;
+$c: #000;
+$bg: #0C59AF;
+$inputH: 40px;
+$font-base: 14px;
+$f: "Open Sans";
+
+@import 'components/flexbox';
+@import 'components/reset';
+@import 'components/classes';
+@import 'components/code';
+//@import 'components/woo';

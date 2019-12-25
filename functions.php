@@ -173,7 +173,7 @@ function content_btn($atts,$content){
         'class' => false,
         'target' => false
     ), $atts ));
-    return '<a href="' . $link . '" class="btn'.($class?' '.$class:'').'" '.($target?'target="'.$target.'"':'').'>' . $content ? $content : $text . '</a>';
+    return '<a href="' . $link . '" class="btn'.($class?' '.$class:'').'" '.($target?'target="'.$target.'"':'').'>' . $content . '</a>';
 }
 add_shortcode("button", "content_btn");
 

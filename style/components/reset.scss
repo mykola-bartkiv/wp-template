@@ -199,8 +199,7 @@ a {
   text-decoration: none;
   @include transition();
   &:hover {
-    opacity: .7;
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 

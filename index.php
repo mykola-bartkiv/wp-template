@@ -20,7 +20,7 @@
                             <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>"><?php the_author(); ?></a>
                         </div>
                         <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                        <p><?php echo wp_trim_words(get_the_content(), 40); ?></p>
+                        <p><?php echo wp_trim_words( strip_shortcodes( get_the_content() ), 20, "..." );  ?></p>
                         <a class="more" href="<?php the_permalink(); ?>">Read more ></a>
                     </div>
                 </div>

@@ -22,7 +22,6 @@ function style_js()
     wp_enqueue_script('lib', get_template_directory_uri() . '/js/lib.js', array('jquery'), '1.0', true);
     wp_enqueue_script('logic', get_template_directory_uri() . '/js/logic.js', array('jquery'), '1.0', true);
 
-    wp_enqueue_style('fonts', get_template_directory_uri() . '/style/fonts.css');
     wp_enqueue_style('libs', get_template_directory_uri() . '/style/libs.css');
     wp_enqueue_style('style', get_template_directory_uri() . '/style/style.css');
 }
@@ -173,7 +172,7 @@ function content_btn($atts,$content){
         'class' => false,
         'target' => false
     ), $atts ));
-    return '<a href="' . $link . '" class="btn'.($class?' '.$class:'').'" '.($target?'target="'.$target.'"':'').'>' . $content . '</a>';
+    return '<a href="' . $link . '" class="btn'.($class?' '.$class:'').'" '.($target?'target="'.$target.'"':'').'>' . ($content? $content : $text) . '</a>';
 }
 add_shortcode("button", "content_btn");
 
@@ -259,34 +258,8 @@ add_action('admin_footer', 'acf_repeater_even');
 
 add_action('wp_head', 'ajax_url');
 function ajax_url() {
-    echo '<script type="text/javascript">var ajax_url="' . admin_url('admin-ajax.php') . '";</script>';
+    echo '<script>var ajax_url="' . admin_url('admin-ajax.php') . '";</script>';
 }
-
-function wpa_fontbase64($fonthash) {
-    $font = get_stylesheet_directory() . '/style/fonts.css';
-    $md5 = filemtime( $font );
-    $md5_cached = get_transient('fonts64_md5');
-    if( $md5_cached !== $md5 ) {
-        set_transient( 'fonts64_md5', $md5, 168 * 3600 );
-    }
-    if($fonthash) {
-        echo $md5_cached?$md5_cached:$md5;
-    } else {
-        $minfont = file_get_contents( $font );
-        $minfont = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $minfont);
-        $minfont = str_replace(array(': ',' : '), ':', $minfont);
-        $minfont = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $minfont);
-        $minfont = str_replace(';}','}', $minfont);
-        $fontpack = array(
-            'md5'      => $md5_cached,
-            'value'    => $minfont
-        );
-        echo json_encode($fontpack);
-        exit;
-    }
-}
-add_action('wp_ajax_wpa_fontbase64', 'wpa_fontbase64');
-add_action('wp_ajax_nopriv_wpa_fontbase64', 'wpa_fontbase64');
 
 function cats($pid){
     $post_categories = wp_get_post_categories($pid);

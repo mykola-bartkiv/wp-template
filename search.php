@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 <section class="content">
-    <div class="container">
+    <div class="container space">
         <?php if ( have_posts() ) : ?>
-            <h3>All posts by "<?php echo $s; ?>"</h3>
+            <h3 class="tac">All search by "<?php echo $s; ?>"</h3>
             <?php  while ( have_posts() ) : the_post(); ?>
                 <div class="post">
                     <?php if ( has_post_thumbnail() ) { ?>

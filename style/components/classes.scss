@@ -240,6 +240,70 @@ div.wpcf7 {
   }
 }
 
+//Search
+.search-box {
+  position: relative;
+  display: inline-block;
+  font-size: 0;
+  z-index: 0;
+
+  .search-form {
+    @include center(false, true);
+    right: 0;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    @include transition();
+
+    button {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      background: transparent;
+      color: #252525;
+      font-size: 20px;
+      @include transition();
+      &:hover {
+        color: $bg;
+      }
+    }
+
+    &.active {
+      opacity: 1;
+      z-index: 1;
+      visibility: visible;
+    }
+  }
+
+  input[type="text"] {
+    width: 270px;
+    padding: 0 40px;
+    font-size: 16px;
+  }
+
+  .search-btn {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    font-size: 20px;
+    position: relative;
+    z-index: 2;
+    color: #252525;
+    cursor: pointer;
+    &::before {
+      @include center();
+      @include transition();
+    }
+
+    &:hover {
+      color: $bg;
+    }
+  }
+}
+
 //All
 .cover {
   background-size: cover;

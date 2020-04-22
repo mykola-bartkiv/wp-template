@@ -99,6 +99,57 @@ div.wpcf7 {
 
 //Main Menu
 .main-menu {
+  >ul {
+    font-size: 0;
+    >li {
+      display: inline-block;
+      position: relative;
+      >a {
+        font-weight: 700;
+        font-size: 18px;
+        color: $bg;
+        text-transform: uppercase;
+        display: inline-block;
+        line-height: 40px;
+        padding: 5px 24px 0;
+      }
+      >.sub-menu {
+        left: 0;
+        position: absolute;
+        top: 130%;
+        visibility: hidden;
+        opacity: 0;
+        @include transition();
+        background: $bg;
+        min-width: 100%;
+        li {
+          a {
+            font-size: 16px;
+            text-transform: uppercase;
+            display: block;
+            padding: 9px 10px 5px;
+            color: #fff;
+            font-weight: 700;
+            white-space: nowrap;
+            &:hover {
+              background: darken($bg, 10%);
+            }
+          }
+        }
+      }
+      &:hover {
+        >a {
+          background: $bg;
+          color: #fff;
+        }
+        >.sub-menu {
+          top: 100%;
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 
 //Mobile menu

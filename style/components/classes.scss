@@ -99,6 +99,9 @@ div.wpcf7 {
 
 //Main Menu
 .main-menu {
+  @include for-size($md) {
+    display: none;
+  }
   >ul {
     font-size: 0;
     >li {

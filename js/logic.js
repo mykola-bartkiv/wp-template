@@ -44,6 +44,17 @@ $(document).ready(function () {
         }
     });
     //====End Empty Paragraphs====
+    
+    //====Search====
+    var searchBtn = $('.search-box .search-btn');
+    if (searchBtn.length > 0) {
+        searchBtn.on('click', function () {
+            $(this).parent().find('input').val('');
+            $(this).toggleClass('fa-close');
+            $(this).parent().find('.search-form').toggleClass('active');
+        });
+    }
+    //====End Search====
 
     //====IMG to SVG====
     $('img.img_svg').each(function () {

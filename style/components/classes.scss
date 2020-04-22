@@ -209,6 +209,7 @@ div.wpcf7 {
   background: $bg;
   z-index: 0;
   padding: 50px 0;
+  overflow: auto;
   @include transition();
   @include transform(translateX(100%));
   @include for-size($md) {

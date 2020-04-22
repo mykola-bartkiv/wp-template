@@ -111,7 +111,7 @@ div.wpcf7 {
   right: 20px;
   z-index: 2;
   cursor: pointer;
-  @include for-size($table) {
+  @include for-size($md) {
     display: block;
   }
   &:before {
@@ -157,7 +157,7 @@ div.wpcf7 {
   padding: 50px 0;
   @include transition();
   @include transform(translateX(100%));
-  @include for-size($table) {
+  @include for-size($md) {
     display: block;
   }
   li {

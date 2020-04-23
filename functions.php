@@ -274,6 +274,13 @@ function cats($pid){
 
 add_theme_support('custom-logo');
 
+add_filter('style_loader_tag', 'myplugin_remove_type_attr', 10, 2);
+add_filter('script_loader_tag', 'myplugin_remove_type_attr', 10, 2);
+
+function myplugin_remove_type_attr($tag, $handle) {
+    return preg_replace( "/type=['\"]text\/(javascript|css)['\"]/", '', $tag );
+}
+
 /*//remove p tag > image
 function filter_ptags_on_images($content){
     return preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '\1', $content);

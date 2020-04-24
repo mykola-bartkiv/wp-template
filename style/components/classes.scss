@@ -81,8 +81,15 @@ div.wpcf7 {
     padding: 5px 20px;
     text-align: center;
   }
+  
+  .btn-wrapper {
+    display: inline-block;
+    position: relative;
+  }
 
   .ajax-loader {
+    @include center(false, true);
+    right: 10px;
     height: 0;
     width: 0;
 

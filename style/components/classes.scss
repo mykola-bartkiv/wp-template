@@ -66,8 +66,8 @@ div.wpcf7 {
     cursor: pointer;
     font-family: $f;
     height: 100%;
-    line-height: 1.2;
-    padding: 10px;
+    line-height: $inputH;
+    padding: 0 23px;
     text-align: left;
   }
 
@@ -80,6 +80,7 @@ div.wpcf7 {
     line-height: 20px;
     padding: 5px 20px;
     text-align: center;
+    color: #000;
   }
   
   .btn-wrapper {

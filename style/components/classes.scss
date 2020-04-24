@@ -312,6 +312,55 @@ div.wpcf7 {
   }
 }
 
+//Social Icons
+.social-icons {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0;
+  text-align: center;
+
+  a {
+    display: inline-block;
+    position: relative;
+    @include transition();
+    font-size: 20px;
+
+    &:before {
+    }
+
+    &:hover {
+    }
+
+    &.fa-facebook {
+      color: $facebook;
+    }
+
+    &.fa-twitter {
+      color: $twitter;
+    }
+
+    &.fa-instagram {
+      color: $instagram;
+    }
+
+    &.fa-linkedin {
+      color: $linkedin;
+    }
+
+    &.fa-pinterest {
+      color: $pinterest;
+    }
+
+    &.fa-youtube {
+      color: $youtube;
+    }
+
+    &.fa-vimeo {
+      color: $vimeo;
+    }
+  }
+}
+
 //All
 .cover {
   background-size: cover;

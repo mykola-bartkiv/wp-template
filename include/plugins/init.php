@@ -208,7 +208,6 @@ function my_theme_register_required_plugins()
             'version' => '1.2.4',
             'force_activation' => false,
             'force_deactivation' => false,
-            
         ),
         array(
             'name' => 'Advanced Custom Fields: PRO',

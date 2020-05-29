@@ -66,5 +66,5 @@ function register_cpts() {
             'query_var'             => true,
             'menu_icon'             => 'dashicons-admin-page',
         ));
-    flush_rewrite_rules();
+    //flush_rewrite_rules();
 }

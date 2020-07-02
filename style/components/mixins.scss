@@ -170,10 +170,12 @@
     height: $height;
     background: $color;
     @include transition();
+    opacity: 0;
   }
   &:hover {
     &:before {
       width: 100%;
+      opacity: 1;
     }
   }
 }

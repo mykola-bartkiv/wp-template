@@ -30,6 +30,7 @@ function register_cpts() {
         'public'                        => true,
         'hierarchical'                  => true,
         'show_in_nav_menus'             => true,
+        'show_admin_column'             => true,
         'args'                          => array( 'orderby' => 'term_order' ),
         'query_var'                     => true,
         'show_ui'                       => true,

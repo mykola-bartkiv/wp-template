@@ -2,6 +2,7 @@
 
 //@include declare-font('Proxima Nova', 'proxima-nova/ProximaNova-Bold', 700);
 //@include declare-font('Proxima Nova', 'proxima-nova/ProximaNova-Regular', 400);
+@include declare-font('Font Awesome', 'fontawesome-webfont', 400);
 
 $md: 1024px;
 $sm: 768px;
@@ -13,6 +14,7 @@ $bg: #0C59AF;
 $inputH: 40px;
 $font-base: 14px;
 $f: "Open Sans";
+$icons: 'Font Awesome';
 
 $facebook: #3b5993;
 $twitter: #55acee;

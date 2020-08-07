@@ -186,6 +186,11 @@ function my_theme_register_required_plugins()
             'required' => false,
         ),
         array(
+            'name'     => 'Simple Local Avatars',
+            'slug'     => 'simple-local-avatars',
+            'required' => false,
+        ),
+        array(
             'name' => 'TinyMCE Advanced',
             'slug' => 'tinymce-advanced',
             'required' => false,

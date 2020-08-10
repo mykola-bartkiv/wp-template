@@ -88,7 +88,7 @@ if(function_exists('acf_add_options_page') ) {
 add_theme_support( 'post-thumbnails' );
 
 //images sizes
-add_image_size( 'full', '1920', '', true );
+add_image_size( 'large', '1920', '', true );
 
 //light function fo wp_get_attachment_image_src()
 function image_src($id, $size = 'full', $background_image = false, $height = false) {

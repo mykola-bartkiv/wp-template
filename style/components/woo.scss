@@ -46,6 +46,24 @@
       }
     }
   }
+  ul.products {
+  margin: 0;
+  li.product {
+  }
+
+  $space: 20px;
+  @for $i from 1 through 10 {
+    &.columns-#{$i} {
+      li.product {
+        margin: 0 #{$space} #{$space} 0;
+        width: calc((100% / #{$i}) - (#{$space} * (#{$i} - 1) / #{$i}));
+        &.last {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
 }
 
 //Account

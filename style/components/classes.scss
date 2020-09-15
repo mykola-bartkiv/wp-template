@@ -33,18 +33,21 @@
 .flex {
   @include flexbox();
   @include justify-content(space-between);
+  @include flex-wrap(wrap);
 }
 
 .flex-center {
   @include flexbox();
   @include align-items(center);
   @include justify-content(center);
+  @include flex-wrap(wrap);
 }
 
 .alc {
   @include flexbox();
   @include justify-content(space-between);
   @include align-items(center);
+  @include flex-wrap(wrap);
 }
 
 //CONTACT FORM

@@ -87,7 +87,23 @@ $(document).ready(function () {
 
     });
     //====End IMG to SVG====
+    
+    //==== Easy Scroll (button)====
+    var btn = $('.btn');
+    if (btn.length) {
+        btn.on('click', function (event) {
+            var id = $(this).attr('href');
+            var isAnchor = id.startsWith('#') && id.length > 1;
 
+            if (isAnchor) {
+                event.preventDefault();
+                var top = $(id).offset().top;
+                $('body,html').animate({scrollTop: top - 50}, 1500);
+            }
+        });
+    }
+    //==== End Easy Scroll (button) ====
+    
      // var swiper = new Swiper('.swiper-container', {
     //     slidesPerView: 3,
     //     spaceBetween: 30,

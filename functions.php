@@ -177,6 +177,38 @@ function content_btn($atts,$content){
 }
 add_shortcode("button", "content_btn");
 
+/*function social_icons_func( $atts ) {
+    $content = '';
+
+    if ( have_rows( 'social_icons', 'options' ) ):
+        $content .= '<div class="social-icons">';
+
+        while ( have_rows( 'social_icons', 'options' ) ) : the_row();
+            if ( get_row_layout() == 'facebook' ):
+                $content .= '<a href="' . get_sub_field( 'url' ) . '" class="fa fa-facebook" title="Official Facebook page" target="_blank"></a>';
+            elseif ( get_row_layout() == 'twitter' ):
+                $content .= '<a href="' . get_sub_field( 'url' ) . '" class="fa fa-twitter" title="Official Twitter accounts" target="_blank"></a>';
+            elseif ( get_row_layout() == 'instagram' ):
+                $content .= '<a href="' . get_sub_field( 'url' ) . '" class="fa fa-instagram" title="Official Instagram accounts" target="_blank"></a>';
+            elseif ( get_row_layout() == 'linkedin' ):
+                $content .= '<a href="' . get_sub_field( 'url' ) . '" class="fa fa-linkedin" title="Official Linkedin profile" target="_blank"></a>';
+            elseif ( get_row_layout() == 'youtube' ):
+                $content .= '<a href="' . get_sub_field( 'url' ) . '" class="fa fa-youtube" title="Official Youtube channel" target="_blank"></a>';
+            elseif ( get_row_layout() == 'vimeo' ):
+                $content .= '<a href="' . get_sub_field( 'url' ) . '" class="fa fa-vimeo" title="Official vimeo channel" target="_blank"></a>';
+            elseif ( get_row_layout() == 'pinterest' ):
+                $content .= '<a href="' . get_sub_field( 'url' ) . '" class="fa fa-pinterest" title="Official Pinterest accounts" target="_blank"></a>';
+            endif;
+        endwhile;
+
+        $content .= '</div>';
+    endif;
+
+    return $content;
+}*/
+
+add_shortcode( 'social_icons', 'social_icons_func' );
+
 //custom SEO title
 function seo_title(){
     global $post;

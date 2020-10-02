@@ -89,7 +89,7 @@ $(document).ready(function () {
     //====End IMG to SVG====
     
     //==== Easy Scroll (button)====
-    var btn = $('.btn');
+    var btn = $('a.btn');
     if (btn.length) {
         btn.on('click', function (event) {
             var id = $(this).attr('href');

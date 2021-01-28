@@ -167,6 +167,7 @@ div.wpcf7 {
 }
 
 //Mobile menu
+$lineColor: $bg;
 .menu-burger {
   display: none;
   width: 34px;
@@ -186,9 +187,9 @@ div.wpcf7 {
     @include center();
     width: calc(100% - 10px);
     height: 2px;
-    background: $bg;
-    -webkit-box-shadow: 0 7px 0 0 $bg, 0 -7px 0 0 $bg;
-    box-shadow: 0 7px 0 0 $bg, 0 -7px 0 0 $bg;
+    background: $lineColor;
+    -webkit-box-shadow: 0 7px 0 0 $lineColor, 0 -7px 0 0 $lineColor;
+    box-shadow: 0 7px 0 0 $lineColor, 0 -7px 0 0 $lineColor;
     @include transition();
   }
   &:after {
@@ -196,7 +197,7 @@ div.wpcf7 {
     @include center();
     width: calc(100% - 10px);
     height: 2px;
-    background: $bg;
+    background: $lineColor;
     @include transition();
   }
   &.open {

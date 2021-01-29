@@ -330,11 +330,18 @@ $lineColor: $bg;
     position: relative;
     @include transition();
     font-size: 20px;
-
-    &:before {
+    margin: 0 15px;
+    
+    &:first-of-type {
+      margin-left: 0;
     }
-
-    &:hover {
+    
+    &:last-of-type {
+      margin-right: 0;
+    }
+    
+    &:before {
+      @include transition();
     }
 
     &.fa-facebook {
@@ -363,6 +370,12 @@ $lineColor: $bg;
 
     &.fa-vimeo {
       color: $vimeo;
+    }
+    
+    &:hover {
+      &::before {
+        color: inherit;
+      }
     }
   }
 }

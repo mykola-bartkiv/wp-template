@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 <section class="content">
-    <div class="container">
+    <div class="container space">
         <h1><?php the_title(); ?></h1>
         <?php if ( '' !== get_post()->post_content ) : ?>
-            <div class="text">
+            <div class="text last-no-spacing cfx">
                 <?php while ( have_posts() ) : the_post(); ?>
                     <?php the_content();; ?>
                 <?php endwhile; ?>

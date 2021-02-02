@@ -1,16 +1,21 @@
 <?php get_header(); ?>
 
-    <section class="single_post">
+    <section class="single-post">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-            <div class="container content">
-                <h1><?php the_title(); ?></h1>
-                <img src="<?php echo image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>" alt="<?php the_title(); ?>">
+            <div class="container content space">
+                <h1 class="tac"><?php the_title(); ?></h1>
+                <?php if ( has_post_thumbnail() ) : ?>
+                    <figure class="thumbnail">
+                        <img src="<?php echo image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>"
+                             alt="<?php the_title(); ?>">
+                    </figure>
+                <?php endif; ?>
                 <time datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('F j, Y'); ?></time>
-                <div class="author_name">Author:
-                    <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>"><?php the_author(); ?></a>
-                </div>
+                <div class="author">Author: <?php the_author(); ?></div>
                 <div class="cats">Category: <?php echo cats($post->ID); ?></div>
-                <?php the_content(); ?>
+                <div class="text last-no-spacing cfx">
+                    <?php the_content(); ?>
+                </div>
                 <div class="tags_list">Tags: <?php the_tags(''); ?></div>
                 <div class="shrs">
                     <a class="i_twttr fab fa-twitter" href="https://twitter.com/intent/tweet?status=<?php the_title(); ?> - <?php the_permalink(); ?>" title="Tweet It" target="_blank" rel="noopener"></a>

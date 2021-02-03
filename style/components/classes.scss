@@ -473,7 +473,7 @@ $lineColor: $bg;
   }
 }
 
-.last-no-spacing > *:last-child {
+.last-no-spacing > *:last-child:not(.btn) {
   margin-bottom: 0;
   padding-bottom: 0;
 }

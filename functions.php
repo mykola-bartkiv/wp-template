@@ -166,14 +166,15 @@ function clear_nav_menu_item_id($id, $item, $args) {
     return "";
 }
 
-function content_btn($atts,$content){
-    extract(shortcode_atts(array(
-        'text' => 'Learn More',
-        'link' => site_url(),
-        'class' => false,
-        'target' => false
-    ), $atts ));
-    return '<a href="' . $link . '" class="btn'.($class?' '.$class:'').'" '.($target?'target="'.$target.'"':'').'>' . ($content? $content : $text) . '</a>';
+function content_btn( $atts, $content ) {
+    $atts = shortcode_atts( array(
+        'text'   => 'Learn More',
+        'link'   => site_url(),
+        'class'  => false,
+        'target' => '_self'
+    ), $atts );
+
+    return '<a href="' . $atts['link'] . '" class="btn' . ( $atts['class'] ? ' ' . $atts['class'] : '' ) . '" ' . ( $atts['target'] ? 'target="' . $atts['target'] . '"' : '' ) . '>' . ( $content ? $content : $atts['text'] ) . '</a>';
 }
 add_shortcode("button", "content_btn");
 

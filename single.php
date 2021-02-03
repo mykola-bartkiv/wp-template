@@ -6,8 +6,7 @@
                 <h1 class="tac"><?php the_title(); ?></h1>
                 <?php if ( has_post_thumbnail() ) : ?>
                     <figure class="thumbnail">
-                        <img src="<?php echo image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>"
-                             alt="<?php the_title(); ?>">
+                        <?php the_post_thumbnail( 'large' ); ?>
                     </figure>
                 <?php endif; ?>
                 <time datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('F j, Y'); ?></time>

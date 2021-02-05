@@ -3,13 +3,13 @@ $(document).ready(function () {
     var width = document.body.clientWidth;
 
     //====Burger, Mobile Menu====
-    $('.menu-burger').click(function () {
+    $('.menu-burger').on('click', function () {
         $(this).toggleClass('open');
         $('.mobile-main-menu').toggleClass('open');
     });
 
     $('<span class="fa fa-angle-right"></span>').insertAfter($(".mobile-main-menu .menu-item-has-children > a"));
-    $(".mobile-main-menu .menu-item-has-children .fa-angle-right").click(function () {
+    $(".mobile-main-menu .menu-item-has-children .fa-angle-right").on('click', function () {
         $(this).next().slideToggle();
         $(this).toggleClass("fa-rotate-90");
         return false;

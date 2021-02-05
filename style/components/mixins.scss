@@ -166,7 +166,7 @@
     bottom: 0;
     left: 0;
     content: '';
-    width: 0%;
+    width: 0;
     height: $height;
     background: $color;
     @include transition();

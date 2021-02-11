@@ -58,13 +58,13 @@ $(document).ready(function () {
 
     //====IMG to SVG====
     $('img.img_svg').each(function () {
-        var $img = jQuery(this);
+        var $img = $(this);
         var imgID = $img.attr('id');
         var imgClass = $img.attr('class');
         var imgURL = $img.attr('src');
 
         $.get(imgURL, function (data) {
-            var $svg = jQuery(data).find('svg');
+            var $svg = $(data).find('svg');
 
             if (typeof imgID !== 'undefined') {
                 $svg = $svg.attr('id', imgID);
@@ -83,7 +83,7 @@ $(document).ready(function () {
 
             $img.replaceWith($svg);
 
-        }, 'xml');
+        }, null, 'xml');
 
     });
     //====End IMG to SVG====

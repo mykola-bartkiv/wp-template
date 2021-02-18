@@ -145,8 +145,8 @@
   }
 }
 
-@mixin for-size($size) {
-  @media (max-width: $size) {
+@mixin for-size($size, $type: 'max') {
+  @media (#{$type}-width: $size) {
     @content;
   }
 }

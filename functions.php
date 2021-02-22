@@ -168,13 +168,20 @@ function clear_nav_menu_item_id($id, $item, $args) {
 
 function content_btn( $atts, $content ) {
     $atts = shortcode_atts( array(
-        'text'   => 'Learn More',
-        'link'   => site_url(),
-        'class'  => false,
-        'target' => '_self'
+        'text'     => 'Read More',
+        'link'     => site_url(),
+        'data-src' => '',
+        'class'    => false,
+        'target'   => '_self'
     ), $atts );
 
-    return '<a href="' . $atts['link'] . '" class="btn' . ( $atts['class'] ? ' ' . $atts['class'] : '' ) . '" ' . ( $atts['target'] ? 'target="' . $atts['target'] . '"' : '' ) . '>' . ( $content ? $content : $atts['text'] ) . '</a>';
+    if ( ! ! $atts['data-src'] ) {
+        $result = '<a data-fancybox data-src="' . $atts['data-src'] . '" href="javascript:;" class="btn' . ( $atts['class'] ? ' ' . $atts['class'] : '' ) . '" ' . ( $atts['target'] ? 'target="' . $atts['target'] . '"' : '' ) . '>' . ( $content ? $content : $atts['text'] ) . '</a>';
+    } else {
+        $result = '<a href="' . $atts['link'] . '" class="btn' . ( $atts['class'] ? ' ' . $atts['class'] : '' ) . '" ' . ( $atts['target'] ? 'target="' . $atts['target'] . '"' : '' ) . '>' . ( $content ? $content : $atts['text'] ) . '</a>';
+    }
+
+    return $result;
 }
 add_shortcode("button", "content_btn");
 

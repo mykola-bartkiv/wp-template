@@ -1,5 +1,5 @@
 <?php
-//Example for Custom Post Type with Taxonimies
+//Example for Custom Post Type with Taxonomies
 
 /*
     *** You van use dash-icons https://developer.wordpress.org/resource/dashicons/
@@ -8,25 +8,25 @@ add_action( 'init', 'register_cpts' );
 function register_cpts() {
 
     //custom taxonomy attached to jobs CPT
-    $taxname = 'Taxonomy Name';
-    $taxlabels = array(
-        'name'                          => $taxname,
-        'singular_name'                 => $taxname,
-        'search_items'                  => 'Search '.$taxname,
-        'popular_items'                 => 'Popular '.$taxname,
-        'all_items'                     => 'All '.$taxname.'s',
-        'parent_item'                   => 'Parent '.$taxname,
-        'edit_item'                     => 'Edit '.$taxname,
-        'update_item'                   => 'Update '.$taxname,
-        'add_new_item'                  => 'Add New '.$taxname,
-        'new_item_name'                 => 'New '.$taxname,
-        'separate_items_with_commas'    => 'Separate '.$taxname.'s with commas',
-        'add_or_remove_items'           => 'Add or remove '.$taxname.'s',
-        'choose_from_most_used'         => 'Choose from most used '.$taxname.'s'
+    $taxName = 'Taxonomy Name';
+    $taxLabels = array(
+        'name'                          => $taxName,
+        'singular_name'                 => $taxName,
+        'search_items'                  => 'Search '.$taxName,
+        'popular_items'                 => 'Popular '.$taxName,
+        'all_items'                     => 'All '.$taxName.'s',
+        'parent_item'                   => 'Parent '.$taxName,
+        'edit_item'                     => 'Edit '.$taxName,
+        'update_item'                   => 'Update '.$taxName,
+        'add_new_item'                  => 'Add New '.$taxName,
+        'new_item_name'                 => 'New '.$taxName,
+        'separate_items_with_commas'    => 'Separate '.$taxName.'s with commas',
+        'add_or_remove_items'           => 'Add or remove '.$taxName.'s',
+        'choose_from_most_used'         => 'Choose from most used '.$taxName.'s'
     );
-    $taxarr = array(
-        'label'                         => $taxname,
-        'labels'                        => $taxlabels,
+    $taxArr = array(
+        'label'                         => $taxName,
+        'labels'                        => $taxLabels,
         'public'                        => true,
         'hierarchical'                  => true,
         'show_in_nav_menus'             => true,
@@ -36,7 +36,7 @@ function register_cpts() {
         'show_ui'                       => true,
         'rewrite'                       => true,
     );
-    register_taxonomy( 'taxonomy_name', 'custom_post_type', $taxarr );
+    register_taxonomy( 'taxonomy_name', 'custom_post_type', $taxArr );
 
     register_post_type( 'custom_post_type',
         array(

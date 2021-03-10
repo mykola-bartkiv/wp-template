@@ -33,7 +33,7 @@
   }
 }
 
-@mixin transform-origin ($origin) {
+@mixin transform-origin($origin) {
   -webkit-transform-origin: $origin;
   -moz-transform-origin: $origin;
   -ms-transform-origin: $origin;
@@ -117,18 +117,18 @@
   @return ($value / ($value * 0 + 1));
 }
 
-@function rem($pxval) {
-  @if not unitless($pxval) {
-    $pxval: strip-units($pxval);
+@function rem($pxVal) {
+  @if not unitless($pxVal) {
+    $pxVal: strip-units($pxVal);
   }
   $base: $font-base;
   @if not unitless($base) {
     $base: strip-units($base);
   }
-  @return ($pxval / $base) * 1rem;
+  @return ($pxVal / $base) * 1rem;
 }
 
-@mixin prefixer($property, $value){
+@mixin prefixes($property, $value) {
   -webkit-#{$property}: #{$value};
   -moz-#{$property}: #{$value};
   -ms-#{$property}: #{$value};
@@ -136,8 +136,8 @@
 }
 
 @mixin columns($count: 2, $gap: 0) {
-  @include prefixer('column-count', $count);
-  @include prefixer('column-gap', $gap);
+  @include prefixes('column-count', $count);
+  @include prefixes('column-gap', $gap);
   > * {
     break-inside: avoid;
     page-break-inside: avoid;
@@ -152,10 +152,18 @@
 }
 
 @mixin placeholder {
-  &::-webkit-input-placeholder { @content; }
-  &:-moz-placeholder           { @content; }
-  &::-moz-placeholder          { @content; }
-  &:-ms-input-placeholder      { @content; }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
 }
 
 @mixin hover($color: #000, $height: 1px) {

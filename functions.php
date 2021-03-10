@@ -96,6 +96,7 @@ function image_src($id, $size = 'full', $background_image = false, $height = fal
     if ($image = wp_get_attachment_image_src($id, $size, true)) {
         return $background_image ? 'background-image: url('.$image[0].');' . ($height?'min-height:'.$image[2].'px':'') : $image[0];
     }
+    return false;
 }
 
 //clear wp_head
@@ -104,8 +105,8 @@ remove_action('wp_head', 'feed_links_extra', 3);
 remove_action('wp_head', 'rsd_link');
 remove_action('wp_head', 'wlwmanifest_link');
 remove_action('wp_head', 'index_rel_link');
-remove_action('wp_head', 'parent_post_rel_link', 10, 0);
-remove_action('wp_head', 'start_post_rel_link', 10, 0);
+remove_action('wp_head', 'parent_post_rel_link', 10);
+remove_action('wp_head', 'start_post_rel_link', 10);
 remove_action('wp_head', 'wp_shortlink_wp_head' );
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head' );
 remove_action('wp_head', 'wp_generator');
@@ -162,7 +163,7 @@ add_filter( 'body_class', 'new_body_classes' );
 
 //remove ID in menu list
 add_filter('nav_menu_item_id', 'clear_nav_menu_item_id', 10, 3);
-function clear_nav_menu_item_id($id, $item, $args) {
+function clear_nav_menu_item_id(/*$id, $item, $args*/) {
     return "";
 }
 
@@ -259,7 +260,7 @@ add_action('admin_head', 'wpa_fix_svg_thumb');
 
 // Contact form 7 remove AUTOTOP
 if(defined('WPCF7_VERSION')) {
-    function maybe_reset_autop( $form ) {
+    function maybe_reset_autop( /*$form*/ ) {
         $form_instance = WPCF7_ContactForm::get_current();
         $manager = WPCF7_ShortcodeManager::get_instance();
         $form_meta = get_post_meta( $form_instance->id(), '_form', true );
@@ -318,7 +319,7 @@ add_theme_support('custom-logo');
 add_filter('style_loader_tag', 'myplugin_remove_type_attr', 10, 2);
 add_filter('script_loader_tag', 'myplugin_remove_type_attr', 10, 2);
 
-function myplugin_remove_type_attr($tag, $handle) {
+function myplugin_remove_type_attr($tag) {
     return preg_replace( "/type=['\"]text\/(javascript|css)['\"]/", '', $tag );
 }
 

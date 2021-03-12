@@ -8,21 +8,16 @@ if (!empty($location)) { ?>
     var styles = [];
     function initMap() {
         $marker = $('#map');
-        var latlng = new google.maps.LatLng($marker.attr('data-lat'), $marker.attr('data-lng'));
-        var mouseScroll;
-        if ($(window).width() > 960) {
-            mouseScroll = true;
-        } else {
-            mouseScroll = false;
-        }
+        var latLng = new google.maps.LatLng($marker.attr('data-lat'), $marker.attr('data-lng'));
+        var mouseScroll = $(window).width() > 960;
         map = new google.maps.Map(document.getElementById('map'), {
-            center: latlng,
+            center: latLng,
             styles: styles,
             zoom: 13,
             scrollwheel: mouseScroll
         });
         var marker = new google.maps.Marker({
-            position: latlng,
+            position: latLng,
             icon: $marker.attr('data-marker'),
             map: map
         });

@@ -6,7 +6,7 @@ require_once 'include/plugins/init.php';
 require_once 'include/wpadmin/admin-addons.php';
 
 function my_acf_init() {
-    acf_update_setting( 'google_api_key', 'AIzaSyAOfuigGs3rWzZsdcWmQTeGU82RGccVqfc' );
+    acf_update_setting( 'google_api_key', 'API-KEY' );
 }
 
 add_action( 'acf/init', 'my_acf_init' );
@@ -295,7 +295,7 @@ function wpa_fix_svg_thumb() {
 
 add_action( 'admin_head', 'wpa_fix_svg_thumb' );
 
-// Contact form 7 remove AUTOTOP
+// Contact form 7 remove AUTO TOP
 if ( defined( 'WPCF7_VERSION' ) ) {
     function maybe_reset_autop( /*$form*/ ) {
         $form_instance = WPCF7_ContactForm::get_current();
@@ -321,7 +321,7 @@ function acf_repeater_even() {
     } else if ( $scheme == 'light' ) {
         $color = '#d64e07';
     } else if ( $scheme == 'blue' ) {
-        $color = '#52accc';
+        $color = '#52ACCC';
     } else if ( $scheme == 'coffee' ) {
         $color = '#59524c';
     } else if ( $scheme == 'ectoplasm' ) {
@@ -366,10 +366,10 @@ function my_plugin_remove_type_attr( $tag ) {
 }
 
 /*//remove p tag > image
-function filter_ptags_on_images($content){
+function filter_p_tags_on_images($content){
     return preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '\1', $content);
 }
-add_filter('the_content', 'filter_ptags_on_images');*/
+add_filter('the_content', 'filter_p_tags_on_images');*/
 
 /*add_theme_support("woocommerce");
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );

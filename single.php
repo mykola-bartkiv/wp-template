@@ -16,11 +16,11 @@
                     <?php the_content(); ?>
                 </div>
                 <div class="tags_list">Tags: <?php the_tags(''); ?></div>
-                <div class="shrs">
-                    <a class="i_twttr fab fa-twitter" href="https://twitter.com/intent/tweet?status=<?php the_title(); ?> - <?php the_permalink(); ?>" title="Tweet It" target="_blank" rel="noopener"></a>
-                    <a class="i_fcbk fab fa-facebook" href="https://www.facebook.com/sharer.php?u=<?php the_permalink();?>&amp;t=<?php the_title(); ?>" title="Share at Facebook" target="_blank" rel="noopener"></a>
-                    <a class="i_lnkdn fab fa-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;title=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>" title="Share at LinkedIn" target="_blank" rel="noopener"></a>
-                    <a class="i_pntrst fab fa-pinterest" href="https://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>" title="Pin It" target="_blank" rel="noopener"></a>
+                <div class="share-icons">
+                    <a class="fab fa-twitter" href="https://twitter.com/intent/tweet?status=<?php the_title(); ?> - <?php the_permalink(); ?>" title="Tweet It" target="_blank" rel="noopener"></a>
+                    <a class="fab fa-facebook" href="https://www.facebook.com/sharer.php?u=<?php the_permalink();?>&amp;t=<?php the_title(); ?>" title="Share at Facebook" target="_blank" rel="noopener"></a>
+                    <a class="fab fa-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;title=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>" title="Share at LinkedIn" target="_blank" rel="noopener"></a>
+                    <a class="fab fa-pinterest" href="https://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>" title="Pin It" target="_blank" rel="noopener"></a>
                 </div>
                 <div class="post_navigation">
                     <?php if (get_previous_post_link()) : ?>

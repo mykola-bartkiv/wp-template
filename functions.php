@@ -14,7 +14,7 @@ add_action( 'acf/init', 'my_acf_init' );
 function style_js() {
     if ( ! is_admin() ) {
         wp_deregister_script( 'jquery' );
-        wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js' );
+        wp_register_script( 'jquery', 'https://code.jquery.com/jquery-3.6.0.min.js' );
         wp_enqueue_script( 'jquery' );
     };
 

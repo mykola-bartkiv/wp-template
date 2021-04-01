@@ -5,7 +5,7 @@
     <title><?php seo_title(); ?></title>
     <meta name="MobileOptimized" content="width"/>
     <meta name="HandheldFriendly" content="True"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5">
     <!--    <meta name="theme-color" content="#00bcb0">-->
     <?php wp_head(); ?>
 </head>

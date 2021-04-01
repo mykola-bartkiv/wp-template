@@ -190,12 +190,15 @@ function new_body_classes( $classes ) {
 
 add_filter( 'body_class', 'new_body_classes' );
 
-//remove ID in menu list
+// remove ID in menu list
 add_filter( 'nav_menu_item_id', 'clear_nav_menu_item_id', 10, 3 );
 function clear_nav_menu_item_id( /*$id, $item, $args*/ ) {
     return "";
 }
 
+// [button link='URL' text='TEXT' target='_blank' class='CLASS']
+// or [button link='URL' target='_blank' class='CLASS']TEXT[/button]
+// or fancybox [button data-src='URL' text='TEXT' class='CLASS']
 function content_btn( $attr, $content ) {
     $attr = shortcode_atts( array(
         'text'     => 'Read More',
@@ -208,11 +211,12 @@ function content_btn( $attr, $content ) {
     $btn_content = $content ? $content : $attr['text'];
     $btn_class   = $attr['class'] ? ' ' . $attr['class'] : '';
     $btn_target  = $attr['target'] ? 'target="' . $attr['target'] . '"' : '';
+    $btn_rel     = $attr['target'] == '_blank' ? 'rel="noopener"' : '';
 
     if ( ! ! $attr['data-src'] ) {
         $result = '<a data-fancybox data-src="' . $attr['data-src'] . '" href="javascript:;" class="btn' . $btn_class . '">' . $btn_content . '</a>';
     } else {
-        $result = '<a href="' . $attr['link'] . '" class="btn' . $btn_class . '" ' . $btn_target . '>' . $btn_content . '</a>';
+        $result = '<a href="' . $attr['link'] . '" ' . $btn_rel . ' class="simple-btn' . $btn_class . '" ' . $btn_target . '>' . $btn_content . '</a>';
     }
 
     return $result;

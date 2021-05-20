@@ -351,6 +351,7 @@ $lineColor: #fff;
 }
 
 // Social Icons
+.share-icons,
 .social-icons {
   cursor: pointer;
   display: inline-block;
@@ -559,6 +560,25 @@ $lineColor: #fff;
   }
   .more {
     @include hover($hover);
+  }
+}
+
+.post-navigation {
+  @include flexbox();
+  @include justify-content(space-between);
+  [rel="next"],
+  [rel="prev"] {
+    @extend .btn;
+    svg {
+      display: inline-block;
+      width: 30px;
+      vertical-align: middle;
+    }
+    span {
+      display: inline-block;
+      font-size: 20px;
+      margin: 0 10px;
+    }
   }
 }
 

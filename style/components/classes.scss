@@ -85,7 +85,7 @@ div.wpcf7 {
     text-align: center;
     color: #000;
   }
-  
+
   .btn-wrapper {
     display: inline-block;
     position: relative;
@@ -94,6 +94,17 @@ div.wpcf7 {
   .ajax-loader {
     @include center(false, true);
     right: 10px;
+    height: 0;
+    width: 0;
+
+    &.is-active {
+      background: url('../img/spinner.gif');
+      width: 30px;
+      height: 30px;
+      display: block;
+      margin: 0 auto;
+      background-size: cover;
+    }
   }
 }
 
@@ -102,12 +113,11 @@ div.wpcf7 {
   @include for-size($md) {
     display: none;
   }
-  >ul {
+  > ul {
     font-size: 0;
-    >li {
+    > li {
       display: inline-block;
-      position: relative;
-      >a {
+      > a {
         font-weight: 700;
         font-size: 18px;
         color: $bg;
@@ -115,48 +125,67 @@ div.wpcf7 {
         display: inline-block;
         line-height: 40px;
         padding: 0 24px;
-      }
-      >.sub-menu {
-        left: 0;
-        position: absolute;
-        top: 130%;
-        visibility: hidden;
-        opacity: 0;
-        @include transition();
-        background: $bg;
-        min-width: 100%;
-        li {
-          a {
-            font-size: 16px;
-            text-transform: uppercase;
-            display: block;
-            padding: 9px 10px 5px;
-            color: #fff;
-            font-weight: 700;
-            white-space: nowrap;
-            &:hover {
-              background: darken($bg, 10%);
-            }
-          }
-        }
-      }
-      &:hover {
-        >a {
+        &:hover {
           background: $bg;
           color: #fff;
         }
-        >.sub-menu {
-          top: 100%;
-          visibility: visible;
-          opacity: 1;
+      }
+      &.menu-item-has-children {
+        > .sub-menu {
+          left: 0;
+          top: 150%;
         }
+        &:hover {
+          > .sub-menu {
+            top: 100%;
+          }
+        }
+      }
+    }
+  }
+  .menu-item-has-children {
+    position: relative;
+    .sub-menu {
+      left: 100%;
+      position: absolute;
+      top: 100%;
+      visibility: hidden;
+      opacity: 0;
+      @include transition();
+      background: $bg;
+      min-width: 100%;
+      li {
+        display: block;
+        a {
+          font-size: 16px;
+          text-transform: uppercase;
+          display: block;
+          padding: 9px 10px 5px;
+          color: #fff;
+          font-weight: 700;
+          white-space: nowrap;
+          &:hover {
+            background: darken($bg, 10%);
+          }
+        }
+      }
+    }
+    &:hover {
+      > a {
+        background: $bg;
+        color: #fff;
+      }
+      > .sub-menu {
+        top: 0%;
+        visibility: visible;
+        opacity: 1;
       }
     }
   }
 }
 
 //Mobile menu
-$lineColor: $bg;
+$lineColor: #fff;
 .menu-burger {
   display: none;
   width: 34px;
@@ -167,7 +196,7 @@ $lineColor: $bg;
   z-index: 2;
   cursor: pointer;
   border-radius: 4px;
-  background: $bg2;
+  background: $bg;
   @include for-size($md) {
     display: block;
   }
@@ -238,6 +267,20 @@ $lineColor: $bg;
     color: #fff;
     @include transition();
   }
+  .arrow {
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    vertical-align: middle;
+    @include transition();
+    path {
+      color: #fff;
+      @include transition();
+    }
+    &.active {
+      @include transform(rotateZ(90deg));
+    }
+  }
   &.open {
     @include transform(translateX(0%));
   }
@@ -307,7 +350,7 @@ $lineColor: $bg;
   }
 }
 
-//Social Icons
+// Social Icons
 .social-icons {
   cursor: pointer;
   display: inline-block;
@@ -319,52 +362,58 @@ $lineColor: $bg;
     position: relative;
     @include transition();
     font-size: 20px;
-    margin: 0 15px;
-    
-    &:first-of-type {
-      margin-left: 0;
-    }
-    
-    &:last-of-type {
-      margin-right: 0;
-    }
-    
-    &:before {
-      @include transition();
-    }
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    background: $bg;
+    border-radius: 5px;
 
-    &.fa-facebook {
-      color: $facebook;
-    }
-
-    &.fa-twitter {
-      color: $twitter;
-    }
-
-    &.fa-instagram {
-      color: $instagram;
-    }
-
-    &.fa-linkedin {
-      color: $linkedin;
-    }
-
-    &.fa-pinterest {
-      color: $pinterest;
-    }
-
-    &.fa-youtube {
-      color: $youtube;
-    }
-
-    &.fa-vimeo {
-      color: $vimeo;
-    }
-    
-    &:hover {
-      &::before {
-        color: inherit;
+    &.facebook-icon {
+      &:hover {
+        background: $facebook;
       }
+    }
+
+    &.twitter-icon {
+      &:hover {
+        background: $twitter;
+      }
+    }
+
+    &.instagram-icon {
+      &:hover {
+        background: $instagram;
+      }
+    }
+
+    &.linkedin-icon {
+      &:hover {
+        background: $linkedin;
+      }
+    }
+
+    &.pinterest-icon {
+      &:hover {
+        background: $pinterest;
+      }
+    }
+
+    &.youtube-icon {
+      &:hover {
+        background: $youtube;
+      }
+    }
+
+    &.vimeo-icon {
+      &:hover {
+        background: $vimeo;
+      }
+    }
+    svg {
+      @include center();
+      height: 20px;
+      display: block;
+      color: #fff;
     }
   }
 }
@@ -394,7 +443,6 @@ $lineColor: $bg;
     &::before {
       @include center();
       content: '\f107';
-      font-family: $icons;
       color: $bg;
       font-size: 20px;
       width: 100%;
@@ -429,6 +477,91 @@ $lineColor: $bg;
   }
 }
 
+// Breadcrumb
+.breadcrumb {
+  text-align: center;
+  color: $c;
+  margin-bottom: 20px;
+  a {
+    color: $c;
+    @include hover($hover);
+  }
+}
+
+// Pagination
+.pagination {
+  margin-top: 40px;
+  @include for-size($xs) {
+    margin-top: 20px;
+  }
+  .screen-reader-text {
+    display: none;
+  }
+  .nav-links {
+    text-align: center;
+    font-size: 0;
+  }
+  .page-numbers {
+    display: inline-block;
+    font-size: 14px;
+    padding: 5px 10px;
+    background: $bg;
+    color: #fff;
+    margin: 0 10px;
+    border-radius: 4px;
+  }
+  svg {
+    height: 12px;
+  }
+  .current {
+    background: lighten($bg, 20%);
+  }
+  a.page-numbers {
+    &:hover {
+      background: lighten($bg, 20%);
+    }
+  }
+  .prev,
+  .next {
+    position: relative;
+  }
+}
+
+// Posts
+.posts-wrapper {
+  @include for-size($sm) {
+    display: block;
+  }
+}
+
+.post {
+  border-radius: 10px;
+  overflow: hidden;
+  @include for-size($xs) {
+    display: block;
+  }
+  .thumb {
+    @include flex-basis(200px);
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .info {
+    @include flex(1);
+    padding: 20px;
+    background: #eee;
+  }
+  .post-title {
+    @extend h3;
+    display: block;
+  }
+  .more {
+    @include hover($hover);
+  }
+}
+
 //All
 .cover {
   background-size: cover;
@@ -449,6 +582,12 @@ $lineColor: $bg;
   }
 }
 
+.link-text {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
 .space {
   padding: 100px 0;
   @include for-size(1366px) {
@@ -466,4 +605,3 @@ $lineColor: $bg;
   margin-bottom: 0;
   padding-bottom: 0;
 }
-

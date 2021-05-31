@@ -12,12 +12,6 @@ function my_acf_init() {
 add_action( 'acf/init', 'my_acf_init' );
 
 function style_js() {
-    if ( ! is_admin() ) {
-        wp_deregister_script( 'jquery' );
-        wp_register_script( 'jquery', 'https://code.jquery.com/jquery-3.6.0.min.js' );
-        wp_enqueue_script( 'jquery' );
-    };
-
     wp_enqueue_script( 'lib', get_template_directory_uri() . '/js/lib.js', array( 'jquery' ), '1.0', true );
     wp_enqueue_script( 'logic', get_template_directory_uri() . '/js/logic.js', array( 'jquery' ), '1.0', true );
 

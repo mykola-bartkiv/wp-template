@@ -210,7 +210,7 @@ function content_btn( $attr, $content ) {
     if ( ! ! $attr['data-src'] ) {
         $result = '<a data-fancybox data-src="' . $attr['data-src'] . '" href="javascript:;" class="btn' . $btn_class . '">' . $btn_content . '</a>';
     } else {
-        $result = '<a href="' . $attr['link'] . '" ' . $btn_rel . ' class="simple-btn' . $btn_class . '" ' . $btn_target . '>' . $btn_content . '</a>';
+        $result = '<a href="' . $attr['link'] . '" ' . $btn_rel . ' class="btn' . $btn_class . '" ' . $btn_target . '>' . $btn_content . '</a>';
     }
 
     return $result;

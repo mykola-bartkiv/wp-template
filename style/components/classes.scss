@@ -93,16 +93,8 @@ div.wpcf7 {
 
   .ajax-loader {
     @include center(false, true);
-    right: 10px;
-
-    &.is-active {
-      background: url('../img/spinner.gif');
-      width: 30px;
-      height: 30px;
-      display: block;
-      margin: 0 auto;
-      background-size: cover;
-    }
+    right: 0;
+    margin: 0 10px;
   }
 }
 

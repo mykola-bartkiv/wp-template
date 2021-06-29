@@ -26,7 +26,7 @@ if (!empty($location)) { ?>
 		height: 500px;
 	}
 </style>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtvdPQ8vmyust3oQPrnEBS5hS1RshvRCk&callback=initMap"
+<script src="https://maps.googleapis.com/maps/api/js?key=<?php the_field( 'map_api_key', 'option' ) ?>&callback=initMap"
         async
         defer></script>
 

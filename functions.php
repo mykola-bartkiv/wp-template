@@ -6,7 +6,9 @@ require_once 'include/plugins/init.php';
 require_once 'include/wpadmin/admin-addons.php';
 
 function my_acf_init() {
-    acf_update_setting( 'google_api_key', 'API-KEY' );
+    if ( $api_key = get_field( 'map_api_key', 'option' ) ) {
+        acf_update_setting( 'google_api_key', $api_key );
+    }
 }
 
 add_action( 'acf/init', 'my_acf_init' );

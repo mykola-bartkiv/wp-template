@@ -7,20 +7,18 @@ if (!empty($location)) { ?>
     var map;
     var styles = [];
     function initMap() {
-        $marker = $('#map');
-        var latLng = new google.maps.LatLng($marker.attr('data-lat'), $marker.attr('data-lng'));
-        var mouseScroll = $(window).width() > 960;
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: latLng,
-            styles: styles,
-            zoom: 13,
-            scrollwheel: mouseScroll
-        });
-        var marker = new google.maps.Marker({
-            position: latLng,
-            icon: $marker.attr('data-marker'),
-            map: map
-        });
+      $map = document.getElementById('map');
+      var latLng = new google.maps.LatLng($map.getAttribute('data-lat'), $map.getAttribute('data-lng'));
+      map = new google.maps.Map($map, {
+                        center: latLng,
+                        styles: styles,
+                        zoom: 16,
+                    });
+      var marker = new google.maps.Marker({
+                        position: latLng,
+                        icon: $map.getAttribute('data-marker'),
+                        map: map,
+      });
     }
 </script>
 <style>

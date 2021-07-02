@@ -144,7 +144,7 @@ if ( ! empty( $location ) ) { ?>
     }
 
     //==== End Map Functionality ====
-
+    
     //==== Maps Init ====
     var maps = $('.map');
     maps.length && maps.each(function () {

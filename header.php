@@ -14,21 +14,23 @@
     <header>
         <div class="container">
             <?php echo get_custom_logo(); ?>
-            <nav class="main-menu">
+            <?php if ( has_nav_menu( 'main_menu' ) ) : ?>
+                <nav class="main-menu">
                 <?php wp_nav_menu( array(
                     'container'      => false,
                     'items_wrap'     => '<ul id="%1$s">%3$s</ul>',
                     'theme_location' => 'main_menu'
                 ) ); ?>
-            </nav>
-            <nav class="mobile-main-menu">
+                </nav>
+                <nav class="mobile-main-menu">
                 <?php wp_nav_menu( array(
                     'container'      => false,
                     'items_wrap'     => '<ul id="%1$s">%3$s</ul>',
                     'theme_location' => 'main_menu'
                 ) ); ?>
-            </nav>
-            <div class="menu-burger"></div>
+                </nav>
+                <div class="menu-burger"></div>
+            <?php endif; ?>
             <?php get_search_form(); ?>
         </div>
     </header>

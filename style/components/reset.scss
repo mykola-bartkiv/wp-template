@@ -54,10 +54,18 @@ mark {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+  @include for-size($sm) {
+   overflow-y: scroll;
+   display: block;
+   tbody {
+    display: block;
+    width: 600px;
+   }
+ }
 }
 
 td {
-  vertical-align: middle;
+  vertical-align: top;
 }
 
 input[type="text"], input[type="email"], input[type="tel"], input[type="search"], select, textarea {

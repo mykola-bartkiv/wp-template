@@ -96,6 +96,49 @@ div.wpcf7 {
     right: 0;
     margin: 0 10px;
   }
+  //[checkbox checkbox-999 use_label_element exclusive "1" "2" "3"]
+//.wpcf7-list-item{
+//    display: block;
+//    margin: 8px 0;
+//    color: #484848;
+//    label{
+//        display: inline-block;
+//        span{
+//            position: relative;
+//            display: inline-block;
+//            padding-left: 30px;
+//            cursor: pointer;
+//            vertical-align: top;
+//            &:before{
+//                position: absolute;
+//                top: 0;
+//                left: 0;
+//                width: 14px;
+//                height: 14px;
+//                content: '';
+//                border: 1px solid #ccc;;
+//            }
+//            &:after{
+//                font-size: 21px;
+//                font-weight: 700;
+//                position: absolute;
+//                top: -10px;
+//                left: 2px;
+//                content: '\2713';
+//                opacity: 0;
+//                color: #ccc;
+//            }
+//        }
+//        input{
+//            display: none;
+//            &:checked+span{
+//                &:after{
+//                    opacity: 1;
+//                }
+//            }
+//        }
+//    }
+//}
 }
 
 //Main Menu

@@ -6,7 +6,7 @@
   position: relative;
 }
 
-.content {
+.text {
   ul {
     margin: 0 0 20px 15px;
     li {
@@ -24,7 +24,7 @@
       }
     }
   }
-  p > a {
+  p > a:not(.btn) {
     color: $bg;
   }
 }

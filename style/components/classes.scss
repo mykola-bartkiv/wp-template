@@ -187,6 +187,7 @@ div.wpcf7 {
       @include transition();
       background: $bg;
       min-width: 100%;
+      pointer-events: none;
       li {
         display: block;
         a {
@@ -212,6 +213,7 @@ div.wpcf7 {
         top: 0%;
         visibility: visible;
         opacity: 1;
+        pointer-events: initial;
       }
     }
   }

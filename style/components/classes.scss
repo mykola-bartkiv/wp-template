@@ -280,7 +280,7 @@ $lineColor: #fff;
   width: 100%;
   height: 100%;
   background: $bg;
-  z-index: 0;
+  z-index: 1;
   padding: 50px 0;
   overflow: auto;
   @include transition();

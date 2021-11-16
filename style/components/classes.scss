@@ -90,7 +90,7 @@ div.wpcf7 {
     display: inline-block;
     position: relative;
   }
-
+  .wpcf7-spinner,
   .ajax-loader {
     @include center(false, true);
     right: 0;

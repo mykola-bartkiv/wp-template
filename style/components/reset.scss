@@ -198,8 +198,11 @@ body {
 }
 
 p {
-  padding-bottom: 20px;
+  margin-bottom: 20px;
   line-height: 1.5;
+  @include for-size($xs) {
+    margin-bottom: 12px;
+  }
 }
 
 a {

@@ -6,7 +6,7 @@
     <meta name="MobileOptimized" content="width"/>
     <meta name="HandheldFriendly" content="True"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5">
-    <!--<link rel="preload" href="--><?php //echo theme(); ?><!--/fonts/" as="font" crossorigin="anonymous" />-->
+    <!--<link rel="preload" href="--><?php //echo theme(); ?><!--/fonts/" as="font" crossorigin />-->
     <!--    <meta name="theme-color" content="#00bcb0">-->
     <?php wp_head(); ?>
 </head>

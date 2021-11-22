@@ -91,25 +91,37 @@
   }
 }
 
-@mixin animation($delay, $duration, $animation) {
-  -webkit-animation-delay: $delay;
-  -webkit-animation-duration: $duration;
+@mixin animation($animation, $duration: 5s, $timing: linear, $delay: 2s, $count: 1, $direction: normal) {
   -webkit-animation-name: $animation;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-timing-function: $timing;
+  -webkit-animation-delay: $delay;
+  -webkit-animation-iteration-count: $count;
+  -webkit-animation-direction: $direction;
   -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
 
-  -moz-animation-delay: $delay;
-  -moz-animation-duration: $duration;
   -moz-animation-name: $animation;
+  -moz-animation-duration: $duration;
+  -moz-animation-timing-function: $timing;
+  -moz-animation-delay: $delay;
+  -moz-animation-iteration-count: $count;
+  -moz-animation-direction: $direction;
   -moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
 
-  -o-animation-delay: $delay;
-  -o-animation-duration: $duration;
   -o-animation-name: $animation;
+  -o-animation-duration: $duration;
+  -o-animation-timing-function: $timing;
+  -o-animation-delay: $delay;
+  -o-animation-iteration-count: $count;
+  -o-animation-direction: $direction;
   -o-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
 
-  animation-delay: $delay;
-  animation-duration: $duration;
   animation-name: $animation;
+  animation-duration: $duration;
+  animation-timing-function: $timing;
+  animation-delay: $delay;
+  animation-iteration-count: $count;
+  animation-direction: $direction;
   animation-fill-mode: forwards; /* this prevents the animation from restarting! */
 }
 

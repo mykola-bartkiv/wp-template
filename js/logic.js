@@ -58,7 +58,7 @@ $(document).ready(function () {
     //====End Search====
 
     //====IMG to SVG====
-    $('img.img_svg').each(function () {
+    $('img[src$=".svg"]').each(function () {
         var $img = $(this);
         var imgID = $img.attr('id');
         var imgClass = $img.attr('class');

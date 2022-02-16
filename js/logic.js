@@ -104,6 +104,19 @@ $(document).ready(function () {
         });
     }
     //==== End Easy Scroll (button) ====
+    
+    //==== Experts Popup ====
+    var expertsPopup = $('a[href="#experts"]');
+    if (expertsPopup.length) {
+        expertsPopup.on('click', function () {
+            $.fancybox.open({
+                src: '#experts',
+                type: 'inline',
+            });
+            return false;
+        });
+    }
+    //==== End Experts Popup ====
 });
 
 $(window).on('load', function () {

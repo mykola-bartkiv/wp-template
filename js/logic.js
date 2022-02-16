@@ -51,7 +51,7 @@ $(document).ready(function () {
     if (searchBtn.length > 0) {
         searchBtn.on('click', function () {
             $(this).parent().find('input').val('');
-            $(this).toggleClass('fa-close');
+            $(this).toggleClass('close');
             $(this).parent().find('.search-form').toggleClass('active');
         });
     }

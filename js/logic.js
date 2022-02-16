@@ -104,35 +104,6 @@ $(document).ready(function () {
         });
     }
     //==== End Easy Scroll (button) ====
-    
-     // var swiper = new Swiper('.swiper-container', {
-    //     slidesPerView: 3,
-    //     spaceBetween: 30,
-    //     slidesPerGroup: 3,
-    //     speed: 1000,
-    //     pagination: {
-    //         el: '.swiper-pagination',
-    //         clickable: 'true',
-    //     },
-    //     navigation: {
-    //         nextEl: '.custom-next',
-    //         prevEl: '.custom-prev',
-    //     },
-    //     breakpoints: {
-    //         320: {
-    //             slidesPerView: 2,
-    //             spaceBetween: 20
-    //         },
-    //         480: {
-    //             slidesPerView: 3,
-    //             spaceBetween: 30
-    //         },
-    //         640: {
-    //             slidesPerView: 4,
-    //             spaceBetween: 40
-    //         }
-    //     }
-    // });
 });
 
 $(window).on('load', function () {

@@ -22,10 +22,24 @@
         top: rem(15);
         left: 0;
       }
+      a {
+        color: $bg;
+        @include hover($hover);
+
+        &:hover {
+          color: $hover;
+        }
+      }
     }
   }
-  p > a:not(.btn) {
+  p > a:not(.btn),
+  p strong a {
     color: $bg;
+    @include hover($hover);
+
+    &:hover {
+      color: $hover;
+    }
   }
 }
 

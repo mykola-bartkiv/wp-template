@@ -503,7 +503,7 @@ $lineColor: #fff;
       height: 0;
       border-style: solid;
       border-width: 6px 4px 0 4px;
-      border-color: $bg3 transparent transparent transparent;
+      border-color: $bg transparent transparent transparent;
       @include transition();
     }
   }

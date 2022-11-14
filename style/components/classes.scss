@@ -277,11 +277,11 @@ $lineColor: #fff;
     &:before {
       @include transform(translate(-50%, -50%) rotateZ(-45deg));
       box-shadow: none;
-      background: #fff;
+      background: $lineColor;
     }
     &:after {
       @include transform(translate(-50%, -50%) rotateZ(45deg));
-      background: #fff;
+      background: $lineColor;
     }
   }
 }

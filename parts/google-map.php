@@ -9,6 +9,8 @@ if ( ! empty( $location ) ) { ?>
 
 <?php if ( $MAP_API_KEY = get_field( 'map_api_key', 'option' ) ) : ?>
     <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo $MAP_API_KEY; ?>" async defer></script>
+    <?php /*OR*/; ?>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=<?php echo $MAP_API_KEY; ?>"></script>
 <?php endif; ?>
 
 <script>

@@ -22,17 +22,10 @@
         top: rem(15);
         left: 0;
       }
-      a {
-        color: $bg;
-        @include hover($hover);
-
-        &:hover {
-          color: $hover;
-        }
-      }
     }
   }
   p > a:not(.btn),
+  li a,
   p strong a {
     color: $bg;
     @include hover($hover);

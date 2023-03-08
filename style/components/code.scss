@@ -1,12 +1,9 @@
 header {
   position: relative;
   z-index: 100;
-}
-
-footer {
-
-}
-
-body {
-  background: green;
+  .custom-logo-link {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 }

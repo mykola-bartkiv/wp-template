@@ -360,7 +360,7 @@ $lineColor: #fff;
       font-size: 20px;
       @include transition();
       &:hover {
-        color: $bg;
+        color: $hover;
       }
     }
 
@@ -393,7 +393,7 @@ $lineColor: #fff;
     }
 
     &:hover {
-      color: $bg;
+      color: $hover;
     }
   }
 }

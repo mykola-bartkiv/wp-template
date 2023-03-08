@@ -340,7 +340,13 @@ $lineColor: #fff;
   display: inline-block;
   font-size: 0;
   z-index: 0;
-
+  
+  svg {
+    height: 20px;
+    color: inherit;
+    @include center();
+  }
+  
   .search-form {
     @include center(false, true);
     right: 0;
@@ -390,10 +396,31 @@ $lineColor: #fff;
     &::before {
       @include center();
       @include transition();
+      content: 'x';
+      font-size: 24px;
+      opacity: 0;
+      color: $c;
     }
 
     &:hover {
-      color: $hover;
+      svg {
+        color: $hover;
+      }
+    }
+    &.close {
+      svg {
+        opacity: 0;
+      }
+
+      &::before {
+        opacity: 1;
+      }
+
+      &:hover {
+        &::before {
+          color: $hover;
+        }
+      }
     }
   }
 }

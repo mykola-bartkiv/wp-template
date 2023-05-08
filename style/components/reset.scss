@@ -121,7 +121,9 @@ img {
   height: auto;
   display: block;
 }
-
+figure {
+  margin-bottom: 0;
+}
 .valign {
   display: inline-block;
   vertical-align: middle;

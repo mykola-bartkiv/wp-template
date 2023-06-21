@@ -152,13 +152,6 @@ if ( ! empty( $location ) ) { ?>
     }
 
     //==== End Map Functionality ====
-    
-    //==== Maps Init ====
-    var maps = $('.map');
-    maps.length && maps.each(function () {
-        render_map($(this));
-    });
-    //==== End Maps ====
 </script>
 
 <?php /*get_template_part( 'parts/google-map'); */ ?>

@@ -8,9 +8,9 @@ if ( ! empty( $location ) ) { ?>
 <?php } ?>
 
 <?php if ( $MAP_API_KEY = get_field( 'map_api_key', 'option' ) ) : ?>
-    <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo $MAP_API_KEY; ?>" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo $MAP_API_KEY; ?>&callback=initMap" async defer></script>
     <?php /*OR*/; ?>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=<?php echo $MAP_API_KEY; ?>"></script>
+    <?php /*<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=<?php echo $MAP_API_KEY; ?>"></script>*/; ?>
 <?php endif; ?>
 
 <script>
@@ -27,10 +27,16 @@ if ( ! empty( $location ) ) { ?>
     *  @param	$el (jQuery element)
     *  @return	n/a
     */
+    function initMap() {
+        var maps = document.querySelectorAll('.map-location');
+        if (maps.length) {
+            render_map(maps);
+        }
+    }
 
     function render_map($el) {
         // var
-        var $markers = $el.find('.marker');
+        var $markers = $el[0].querySelectorAll('.marker');
 
         // vars
         var args = {
@@ -46,10 +52,8 @@ if ( ! empty( $location ) ) { ?>
         map.markers = [];
 
         // add markers
-        $markers.each(function () {
-
-            add_marker($(this), map);
-
+        $markers.forEach(function (m) {
+            add_marker(m, map);
         });
 
         // center map
@@ -73,7 +77,9 @@ if ( ! empty( $location ) ) { ?>
 
     function add_marker($marker, map) {
         // var
-        var latlng = new google.maps.LatLng($marker.attr('data-lat'), $marker.attr('data-lng'));
+        var lat = $marker.getAttribute('data-lat');
+        var lng = $marker.getAttribute('data-lng');
+        var latlng = new google.maps.LatLng(lat, lng);
 
         // create marker SVG
         var icon = {

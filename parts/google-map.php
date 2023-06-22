@@ -1,6 +1,6 @@
 <?php $location = get_field( 'map', 'option' );
 if ( ! empty( $location ) ) { ?>
-    <div class="map contact-map">
+    <div class="map contact-map" data-zoom="16">
         <div class="marker" data-color="#ea4335" data-lat="<?php echo esc_attr( $location['lat'] ); ?>" data-lng="<?php echo esc_attr( $location['lng'] ); ?>">
             <span><?php echo esc_html( $location['address'] ); ?></span>
         </div>
@@ -37,10 +37,10 @@ if ( ! empty( $location ) ) { ?>
     function render_map($el) {
         // var
         var $markers = $el[0].querySelectorAll('.marker');
-
+        var zoom = +$el[0].getAttribute('data-zoom');
         // vars
         var args = {
-            zoom: 16,
+            zoom: zoom || 16,
             center: new google.maps.LatLng(0, 0),
             mapTypeId: google.maps.MapTypeId.ROADMAP,
         };
@@ -133,6 +133,7 @@ if ( ! empty( $location ) ) { ?>
     function center_map(map) {
         // Create map boundaries from all map markers.
         var bounds = new google.maps.LatLngBounds();
+        var zoom = +document.querySelectorAll('.map')[0].getAttribute('data-zoom') || 16;
         map.markers.forEach(function (marker) {
             bounds.extend({
                 lat: marker.position.lat(),
@@ -143,10 +144,12 @@ if ( ! empty( $location ) ) { ?>
         // Case: Single marker.
         if (map.markers.length === 1) {
             map.setCenter(bounds.getCenter());
-
+            map.setZoom(zoom);
             // Case: Multiple markers.
         } else {
-            map.fitBounds(bounds);
+            //map.fitBounds(bounds);
+            map.setCenter(bounds.getCenter());
+            map.setZoom(zoom);
         }
 
     }

@@ -280,8 +280,6 @@ function svg_myme_types($mime_types)
 }
 add_filter('upload_mimes', 'svg_myme_types', 1, 1);
 
-add_action( 'admin_head', 'wpa_fix_svg_thumb' );
-
 // Contact form 7 remove AUTO TOP
 if ( defined( 'WPCF7_VERSION' ) ) {
     function maybe_reset_autop( /*$form*/ ) {

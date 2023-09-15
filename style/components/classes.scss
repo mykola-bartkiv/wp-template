@@ -24,8 +24,8 @@
       }
     }
   }
-  h1, h2, h3, h4, h5, h6, li, p, p strong {
-    > a:not(.btn) {
+  h1, h2, h3, h4, h5, h6, li, p {
+    a:not(.btn) {
       color: $c;
       text-decoration: underline;
 

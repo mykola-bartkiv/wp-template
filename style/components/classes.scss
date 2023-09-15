@@ -24,14 +24,15 @@
       }
     }
   }
-  p > a:not(.btn),
-  li a,
-  p strong a {
-    color: $bg;
-    @include hover($hover);
+  h1, h2, h3, h4, h5, h6, li, p, p strong {
+    > a:not(.btn) {
+      color: $c;
+      text-decoration: underline;
 
-    &:hover {
-      color: $hover;
+      &:hover {
+        text-decoration: none;
+        color: $hover;
+      }
     }
   }
 }

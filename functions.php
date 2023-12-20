@@ -363,4 +363,5 @@ remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_catalog_ordering', 
 // Remove the result count from WooCommerce
 remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_result_count', 20 );
 add_theme_support( 'wc-product-gallery-lightbox' );
+add_theme_support( 'wc-product-gallery-zoom' );
 add_theme_support( 'wc-product-gallery-slider' );*/

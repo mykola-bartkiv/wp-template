@@ -156,6 +156,11 @@ figure {
 }
 
 // custom scrollbar
+html {
+  overflow-y: scroll;
+  scrollbar-color: $bg #eaeaea;
+  scrollbar-width: thin;
+}
 html::-webkit-scrollbar {
   width: 6px;
   @include for-size($md) {

@@ -257,7 +257,7 @@ textarea {
   cursor: pointer;
   min-width: 220px;
   &:hover {
-    background: lighten($bg, 10%);
+    background: $hover;
   }
 }
 

@@ -6,7 +6,7 @@
             </svg>
             <span style="display: none;">Search</span>
         </button>
-        <label for="s"><span style="display: none;">Search</span>
+        <label><span style="display: none;">Search</span>
             <input type="text" placeholder="Search" name="s" value="">
         </label>
     </form>

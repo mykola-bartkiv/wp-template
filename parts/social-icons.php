@@ -2,7 +2,7 @@
     <div class="social-icons">
         <?php while ( have_rows( 'social_icons', 'options' ) ) : the_row();
             if ( get_row_layout() == 'facebook' ): ?>
-                <a href="<?php the_sub_field( 'url' ); ?>"
+                <a href="<?php echo get_sub_field( 'url' ); ?>"
                    class="facebook-icon"
                    title="Official Facebook page"
                    rel="noopener"
@@ -12,7 +12,7 @@
                     </svg>
                 </a>
             <?php elseif ( get_row_layout() == 'twitter' ): ?>
-                <a href="<?php the_sub_field( 'url' ); ?>"
+                <a href="<?php echo get_sub_field( 'url' ); ?>"
                    class="twitter-icon"
                    title="Official Twitter accounts"
                    rel="noopener"
@@ -22,7 +22,7 @@
                     </svg>
                 </a>
             <?php elseif ( get_row_layout() == 'instagram' ): ?>
-                <a href="<?php the_sub_field( 'url' ); ?>"
+                <a href="<?php echo get_sub_field( 'url' ); ?>"
                    class="instagram-icon"
                    title="Official Instagram accounts"
                    rel="noopener"
@@ -32,7 +32,7 @@
                     </svg>
                 </a>
             <?php elseif ( get_row_layout() == 'linkedin' ): ?>
-                <a href="<?php the_sub_field( 'url' ); ?>"
+                <a href="<?php echo get_sub_field( 'url' ); ?>"
                    class="linkedin-icon"
                    title="Official Linkedin profile"
                    rel="noopener"
@@ -42,7 +42,7 @@
                     </svg>
                 </a>
             <?php elseif ( get_row_layout() == 'youtube' ): ?>
-                <a href="<?php the_sub_field( 'url' ); ?>"
+                <a href="<?php echo get_sub_field( 'url' ); ?>"
                    class="youtube-icon"
                    title="Official Youtube channel"
                    rel="noopener"
@@ -52,7 +52,7 @@
                     </svg>
                 </a>
             <?php elseif ( get_row_layout() == 'vimeo' ): ?>
-                <a href="<?php the_sub_field( 'url' ); ?>"
+                <a href="<?php echo get_sub_field( 'url' ); ?>"
                    class="vimeo-icon"
                    title="Official Vimeo channel"
                    rel="noopener"
@@ -62,7 +62,7 @@
                     </svg>
                 </a>
             <?php elseif ( get_row_layout() == 'pinterest' ): ?>
-                <a href="<?php the_sub_field( 'url' ); ?>"
+                <a href="<?php echo get_sub_field( 'url' ); ?>"
                    class="pinterest-icon"
                    title="Official Pinterest accounts"
                    rel="noopener"

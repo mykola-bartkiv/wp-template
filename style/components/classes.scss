@@ -403,7 +403,9 @@ $lineColor: #fff;
       opacity: 0;
       color: $c;
     }
-
+    svg {
+      @include transition();
+    }
     &:hover {
       svg {
         color: $hover;

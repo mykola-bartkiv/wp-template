@@ -1,7 +1,6 @@
 <?php
 
 // Recommended plugins installer
-require_once 'include/plugins/init.php';
 //require_once 'custom-post-type.php';
 require_once 'include/wpadmin/admin-addons.php';
 
@@ -22,16 +21,6 @@ function style_js() {
 }
 
 add_action( 'wp_enqueue_scripts', 'style_js' );
-
-// HTML5 support for IE
-function wp_IE_html5_js() {
-    global $is_IE;
-    if ( $is_IE ) {
-        echo '<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]--><!--[if lte IE 9]><link href="' . theme() . '/style/animations-ie-fix.css" rel="stylesheet" /><![endif]-->';
-    }
-}
-
-add_action( 'wp_head', 'wp_IE_html5_js' );
 
 // Custom theme url
 function theme( $filePath = null ) {

@@ -2,6 +2,7 @@
 
 // Recommended plugins installer
 //require_once 'custom-post-type.php';
+//require_once 'include/plugins/init.php';
 require_once 'include/wpadmin/admin-addons.php';
 
 function my_acf_init() {

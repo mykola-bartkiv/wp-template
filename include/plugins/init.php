@@ -206,6 +206,11 @@ function my_theme_register_required_plugins()
             'required' => false,
         ),
         array(
+            'name' => 'Yoast Duplicate Post',
+            'slug' => 'duplicate-post',
+            'required' => false,
+        ),
+        array(
             'name' => 'Wp-scss',
             'slug' => 'wp-scss',
             'source' => get_stylesheet_directory() . '/include/plugins/wp-scss-v1.2.4.zip',

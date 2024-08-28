@@ -340,6 +340,13 @@ function my_plugin_remove_type_attr( $tag ) {
     return preg_replace( "/type=['\"]text\/(javascript|css)['\"]/", '', $tag );
 }
 
+add_action(
+    'after_setup_theme',
+    function() {
+        add_theme_support( 'html5', [ 'script', 'style' ] );
+    }
+);
+
 /*//remove p tag > image
 function filter_p_tags_on_images($content){
     return preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '\1', $content);

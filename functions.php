@@ -346,7 +346,10 @@ add_action(
         add_theme_support( 'html5', [ 'script', 'style' ] );
     }
 );
-
+function wps_deregister_styles() {
+    wp_dequeue_style( 'wp-block-library' );
+}
+add_action( 'wp_print_styles', 'wps_deregister_styles', 100 );
 /*//remove p tag > image
 function filter_p_tags_on_images($content){
     return preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '\1', $content);

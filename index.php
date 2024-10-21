@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section class="content container space">
+<section class="content wrap space">
     <?php get_template_part( 'parts/breadcrumb' ); ?>
     <div class="posts-wrapper flex">
         <article>

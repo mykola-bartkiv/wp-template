@@ -25,13 +25,6 @@ $(document).ready(function () {
         });
     });
 
-    if (!$(".woocommerce-checkout")[0]) {
-        $('select').selectric({
-            disableOnMobile: false,
-            nativeOnMobile: false,
-        });
-    }
-
     $('select.wpcf7-form-control').each(function () {
         $(this).find('option').first().val('');
     });

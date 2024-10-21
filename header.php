@@ -13,7 +13,7 @@
 <body <?php body_class(); ?> data-a="<?php echo admin_url('admin-ajax.php'); ?>">
 <div class="main">
     <header>
-        <div class="container">
+        <div class="wrap">
             <?php echo get_custom_logo(); ?>
             <?php if ( has_nav_menu( 'main_menu' ) ) : ?>
                 <nav class="main-menu">

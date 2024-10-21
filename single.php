@@ -2,7 +2,7 @@
 
 <section class="single-wrapper">
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-        <div class="container content space">
+        <div class="wrap content space">
             <?php get_template_part( 'parts/breadcrumb' ); ?>
             <h1 class="tac"><?php the_title(); ?></h1>
             <?php if ( has_post_thumbnail() ) : ?>

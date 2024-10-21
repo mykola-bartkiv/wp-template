@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <section class="content">
-    <div class="container space">
+    <div class="wrap space">
         <?php if ( have_posts() ) : ?>
             <h3 class="tac">All search by "<?php echo $s; ?>"</h3>
             <?php  while ( have_posts() ) : the_post(); ?>

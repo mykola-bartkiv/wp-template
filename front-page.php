@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <section class="content">
-    <div class="container">
+    <div class="wrap">
          <?php if ( '' !== get_post()->post_content ) : ?>
             <div class="text">
                 <?php while ( have_posts() ) : the_post(); ?>

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <section class="content">
-    <div class="container space">
+    <div class="wrap space">
         <h1><?php the_title(); ?></h1>
         <?php if ( '' !== get_post()->post_content ) : ?>
             <div class="text last-no-spacing cfx">

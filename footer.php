@@ -1,6 +1,6 @@
 </div>
 <footer>
-    <div class="container">
+    <div class="wrap">
         <?php if ( has_nav_menu( 'footer_menu' ) ) : ?>
             <nav class="footer-menu">
                 <?php wp_nav_menu( array(

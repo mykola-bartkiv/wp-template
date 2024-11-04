@@ -17,8 +17,8 @@ function style_js() {
     wp_enqueue_script( 'lib', get_template_directory_uri() . '/js/lib.js', array( 'jquery' ), '1.0', true );
     wp_enqueue_script( 'logic', get_template_directory_uri() . '/js/logic.js', array( 'jquery' ), '1.0', true );
 
-    wp_enqueue_style( 'libs', get_template_directory_uri() . '/style/libs.css' );
-    wp_enqueue_style( 'style', get_template_directory_uri() . '/style/style.css' );
+    wp_enqueue_style( 'libs', get_template_directory_uri() . '/scss/libs.css' );
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/scss/style.css' );
 }
 
 add_action( 'wp_enqueue_scripts', 'style_js' );
@@ -235,7 +235,7 @@ function seo_title() {
 if ( class_exists( 'Wp_Scss_Settings' ) ) {
     $wpscss = get_option( 'wpscss_options' );
     if ( empty( $wpscss['css_dir'] ) && empty( $wpscss['scss_dir'] ) ) {
-        update_option( 'wpscss_options', array( 'css_dir' => '/style/', 'scss_dir' => '/style/', 'compiling_options' => 'scss_formatter_compressed' ) );
+        update_option( 'wpscss_options', array( 'css_dir' => '/scss/', 'scss_dir' => '/scss/', 'compiling_options' => 'scss_formatter_compressed' ) );
     }
 }
 

@@ -14,7 +14,9 @@
 <div class="main">
     <header>
         <div class="wrap">
-            <?php echo get_custom_logo(); ?>
+            <a href="<?php echo get_home_url(); ?>" class="logo">
+                <img src="<?php echo theme(); ?>/img/logo.png" alt="Logo" width="207" height="46">
+            </a>
             <?php if ( has_nav_menu( 'main_menu' ) ) : ?>
                 <nav class="main-menu">
                 <?php wp_nav_menu( array(

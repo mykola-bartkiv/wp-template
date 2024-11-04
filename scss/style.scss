@@ -1,0 +1,37 @@
+@import 'components/mixins';
+
+//@include declare-font('Open Sans', 'open-sans/OpenSans-Bold', 700);
+//@include declare-font('Open Sans', 'open-sans/OpenSans-Regular', 400);
+
+
+$md: 1024px;
+$sm: 768px;
+$xs: 480px;
+
+$w: 1140px;
+$c: #000;
+$bg: #0C59AF;
+$bg2: #0C59AF;
+$bg3: #0C59AF;
+
+$hover: lighten($bg, 20%);
+$hover2: lighten($bg2, 20%);
+
+$inputH: 40px;
+$font-base: 14px;
+$f: 'Open Sans';
+
+
+$facebook: #3b5993;
+$twitter: #55acee;
+$instagram: #d6249f;
+$linkedin: #0177b5;
+$pinterest: #bd1e23;
+$youtube: #f80000;
+$vimeo: #1ab7ea;
+
+@import 'components/flexbox';
+@import 'components/reset';
+@import 'components/classes';
+@import 'components/code';
+//@import 'components/woo';

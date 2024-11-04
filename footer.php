@@ -1,6 +1,9 @@
 </div>
 <footer>
     <div class="wrap">
+        <a href="<?php echo get_home_url(); ?>" class="footer-logo">
+            <img src="<?php echo theme(); ?>/img/logo.png" alt="Footer Logo" width="207" height="46">
+        </a>
         <?php if ( has_nav_menu( 'footer_menu' ) ) : ?>
             <nav class="footer-menu">
                 <?php wp_nav_menu( array(

@@ -1,0 +1,278 @@
+//RESET
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  min-width: 1px;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  -webkit-text-size-adjust: none;
+}
+
+a, a:hover, input, textarea, select {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: 0 none
+}
+
+ol {
+  list-style: decimal inside;
+  margin-bottom: 20px;
+  li {
+    padding: 5px 0 5px 15px;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none;
+}
+
+:focus {
+  outline: 0;
+}
+
+a img, fieldset, hr {
+  border: 0;
+}
+
+mark {
+  background: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  @include for-size($sm) {
+   overflow-y: scroll;
+   display: block;
+   tbody {
+    display: block;
+    width: 800px;
+   }
+ }
+}
+
+td {
+  vertical-align: top;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="search"], select, textarea {
+  @include transition();
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+input[type="submit"], input[type="button"], button, .button {
+  @include transition();
+  -webkit-appearance: none;
+  cursor: pointer;
+  border: none;
+}
+
+hr {
+  clear: both;
+  overflow: hidden;
+  display: block;
+}
+
+article, aside, details, figcaption, figure, footer, header, nav, section, summary, main {
+  display: block;
+}
+
+.alignleft {
+  float: left;
+  margin: 0 30px 10px 0;
+}
+
+.alignright {
+  float: right;
+  margin: 0 0 10px 30px;
+}
+
+.aligncenter {
+  margin: 0 auto 20px;
+}
+
+.alignnone {
+  margin: 0 0 20px;
+}
+
+.alignleft, .aligncenter, .alignright {
+  @include for-size($md) {
+    float: none;
+    margin: 0 auto 20px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+figure {
+  margin-bottom: 0;
+}
+.valign {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 94%
+}
+
+.vfix {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  width: 0
+}
+
+//Fullframe
+.fullframe {
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  padding-bottom: 56.5%;
+  position: relative;
+  z-index: 0;
+  iframe, object, embed {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1
+  }
+}
+
+// custom scrollbar
+html {
+  overflow-y: scroll;
+  scrollbar-color: $bg #eaeaea;
+  scrollbar-width: thin;
+}
+html::-webkit-scrollbar {
+  width: 6px;
+  @include for-size($md) {
+    width: 10px
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  background: $bg
+}
+
+::-webkit-scrollbar-track {
+  background: #eaeaea
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: darken($bg, 5%)
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: darken($bg, 5%)
+}
+
+html {
+  font: 400 #{$font-base}/1.5714 $f, sans-serif;
+  @include for-size($md) {
+    font-size: 14px;
+  }
+}
+
+body {
+  color: $c;
+  @include flex-direction(column);
+  @include flexbox();
+  min-height: 100vh;
+}
+
+.main {
+  overflow: hidden;
+  @include flex(1, 0, auto);
+  width: 100%;
+}
+
+p {
+  margin-bottom: 20px;
+  line-height: 1.5;
+  @include for-size($xs) {
+    margin-bottom: 12px;
+  }
+}
+
+a {
+  text-decoration: none;
+  @include transition();
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+input[type="text"], input[type="email"], input[type="url"], input[type="tel"], input[type="search"], input[type="password"], textarea, select {
+  height: $inputH;
+  width: 100%;
+  border: 1px solid #000;
+  background: #fff;
+  padding: 0 20px;
+  color: $c;
+  font-family: $f;
+  font-size: 14px;
+  &:focus {
+    border-color: $bg;
+  }
+  @include placeholder() {
+    color: $c;
+    opacity: 1;
+  }
+}
+
+select {
+  option {
+    color: $c;
+    padding: 5px 10px;
+  }
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+  padding: 12px 20px;
+  display: block;
+}
+
+.btn, .submit {
+  display: inline-block;
+  line-height: 1;
+  padding: 15px 20px;
+  font-size: 14px;
+  background: $bg;
+  color: #fff;
+  font-family: $f;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  min-width: 220px;
+  &:hover {
+    background: $hover;
+  }
+}
+
+h1, h2 {
+
+}
+
+h3 {
+  font-size: 24px;
+}

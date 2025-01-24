@@ -7,7 +7,7 @@
             <h1 class="tac"><?php the_title(); ?></h1>
             <?php if ( has_post_thumbnail() ) : ?>
                 <figure class="thumbnail">
-                    <?php the_post_thumbnail( 'free' ); ?>
+                    <?php the_post_thumbnail( 'max' ); ?>
                 </figure>
             <?php endif; ?>
             <time datetime="<?php echo get_the_date( 'Y-m-d' ); ?>"><?php echo get_the_date( 'F j, Y' ); ?></time>

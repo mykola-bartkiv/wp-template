@@ -72,11 +72,15 @@ input[type="text"], input[type="email"], input[type="tel"], input[type="search"]
   @include transition();
   border-radius: 0;
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 input[type="submit"], input[type="button"], button, .button {
   @include transition();
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   cursor: pointer;
   border: none;
 }

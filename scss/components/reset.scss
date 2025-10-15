@@ -4,16 +4,8 @@
   padding: 0;
   outline: 0;
   box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   min-width: 1px;
 }
-
-html {
-  -webkit-font-smoothing: antialiased;
-  -webkit-overflow-scrolling: touch;
-  -webkit-text-size-adjust: none;
-}
-
 a, a:hover, input, textarea, select {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   outline: 0 none
@@ -22,6 +14,7 @@ a, a:hover, input, textarea, select {
 ol {
   list-style: decimal inside;
   margin-bottom: 20px;
+
   li {
     padding: 5px 0 5px 15px;
   }
@@ -55,13 +48,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   @include for-size($sm) {
-   overflow-y: scroll;
-   display: block;
-   tbody {
+    overflow-y: scroll;
     display: block;
-    width: 800px;
-   }
- }
+    tbody {
+      display: block;
+      width: 800px;
+    }
+  }
 }
 
 td {
@@ -72,14 +65,12 @@ input[type="text"], input[type="email"], input[type="tel"], input[type="search"]
   transition: all 0.4s ease;
   border-radius: 0;
   -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
 }
 
 input[type="submit"], input[type="button"], button, .button {
- transition: all 0.4s ease;
+  transition: all 0.4s ease;
   -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   cursor: pointer;
   border: none;
@@ -125,9 +116,11 @@ img {
   height: auto;
   display: block;
 }
+
 figure {
   margin-bottom: 0;
 }
+
 .valign {
   display: inline-block;
   vertical-align: middle;
@@ -149,6 +142,7 @@ figure {
   padding-bottom: 56.5%;
   position: relative;
   z-index: 0;
+
   iframe, object, embed {
     height: 100%;
     left: 0;
@@ -159,52 +153,52 @@ figure {
   }
 }
 
-// custom scrollbar
 html {
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  -webkit-text-size-adjust: none;
+  font: 400 #{$font-base}/1.5714 $f, sans-serif;
   overflow-y: scroll;
   scrollbar-color: $bg #eaeaea;
   scrollbar-width: thin;
-}
-html::-webkit-scrollbar {
-  width: 6px;
-  @include for-size($md) {
-    width: 10px
-  }
-}
-
-::-webkit-scrollbar-thumb {
-  background: $bg
-}
-
-::-webkit-scrollbar-track {
-  background: #eaeaea
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: $bg;
-}
-
-::-webkit-scrollbar-thumb:active {
-  background: $bg;
-}
-
-html {
-  font: 400 #{$font-base}/1.5714 $f, sans-serif;
   @include for-size($md) {
     font-size: 14px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    @include for-size($md) {
+      width: 10px
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $bg
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #eaeaea
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: $bg;
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background: $bg;
   }
 }
 
 body {
   color: $c;
-  @include flex-direction(column);
-  @include flexbox();
+  flex-direction: column;
+  display: flex;
   min-height: 100vh;
 }
 
 .main {
   overflow: hidden;
-  @include flex(1, 0, auto);
+  flex: 1 0 auto;
   width: 100%;
 }
 
@@ -219,6 +213,7 @@ p {
 a {
   text-decoration: none;
   transition: all 0.4s ease;
+
   &:hover {
     text-decoration: none;
   }
@@ -233,10 +228,12 @@ input[type="text"], input[type="email"], input[type="url"], input[type="tel"], i
   color: $c;
   font-family: $f;
   font-size: 14px;
+
   &:focus {
     border-color: $bg;
   }
-  @include placeholder() {
+
+  &::placeholder {
     color: $c;
     opacity: 1;
   }
@@ -268,6 +265,7 @@ textarea {
   text-decoration: none;
   cursor: pointer;
   min-width: 220px;
+
   &:hover {
     background: $hover;
   }

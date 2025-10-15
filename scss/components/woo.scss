@@ -3,13 +3,12 @@
   form {
     input, textarea {
       color: $c;
+
       &:focus {
-        border-bottom-color: darken($bg, 20%);
-      }
-      @include placeholder() {
-        color: $c;
+        border-bottom-color: $bg;
       }
     }
+
     .form-row-first,
     .form-row-last {
       @include for-size($xs) {
@@ -17,88 +16,99 @@
       }
     }
   }
+
   .woocommerce-Button.button,
   button.button {
     @extend .btn;
+
     &:disabled[disabled],
     &:disabled {
       padding: 0;
       color: #fff;
+
       &:hover {
-        background: lighten($bg, 10%);
+        background: $bg;
         color: #fff;
       }
     }
   }
-  p {
-    a {
-      @include hover($bg);
-    }
-  }
+
   .woocommerce-notices-wrapper {
     ul {
       margin-left: 0;
+
       li {
         padding: 0;
+
         &::before {
           display: none;
         }
       }
     }
   }
-  ul.products {
-  margin: 0;
-  li.product {
-  }
 
-  $space: 20px;
-  @for $i from 1 through 10 {
-    &.columns-#{$i} {
-      li.product {
-        margin: 0 #{$space} #{$space} 0;
-        width: calc((100% / #{$i}) - (#{$space} * (#{$i} - 1) / #{$i}));
-        &.last {
-          margin-right: 0;
+  ul.products {
+    margin: 0;
+
+    li.product {
+    }
+
+    $space: 20px;
+    @for $i from 1 through 10 {
+      &.columns-#{$i} {
+        li.product {
+          margin: 0 #{$space} #{$space} 0;
+          width: calc((100% / #{$i}) - (#{$space} * (#{$i} - 1) / #{$i}));
+
+          &.last {
+            margin-right: 0;
+          }
         }
       }
     }
   }
-}
 }
 
 //Account
 .woocommerce-account {
   .addresses .title {
-    @include flexbox();
-    @include align-items(center);
-    @include justify-content(space-between);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     h3 {
-      @include flex(1);
+      flex: 1;
     }
+
     .edit {
       @extend .btn;
       min-width: auto;
     }
   }
+
   .woocommerce-MyAccount-navigation {
     ul {
       margin: 0;
+
       li {
         padding: 0;
+
         &::before {
           display: none;
         }
+
         a {
           @extend h5;
           color: $bg;
-          @include hover($bg, 2px);
         }
       }
     }
   }
+
   .woocommerce-MyAccount-content {
     h3 {
       padding-bottom: 0;
+
       &::before {
         display: none;
       }
@@ -112,10 +122,10 @@
     td {
       &.product-name {
         a {
-          @include hover($bg, 2px);
           color: $bg;
         }
       }
+
       &.actions {
         .coupon {
           .input-text {
@@ -129,6 +139,7 @@
               width: 100%;
             }
           }
+
           .button {
             @include for-size($xs) {
               width: 100%;
@@ -147,24 +158,28 @@
     ul.payment_methods {
       li {
         &::before {
-         display: none;
+          display: none;
         }
       }
     }
   }
+
   .woocommerce-error {
     margin-left: 0;
+
     li {
       padding: 0;
+
       &::before {
         display: none;
       }
     }
   }
+
   .showcoupon {
     color: $bg;
-    @include hover($bg);
   }
+
   #order_review_heading {
     margin-top: 20px;
   }

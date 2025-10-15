@@ -365,7 +365,6 @@
   $marginInt: strip-units($sideMargin);
   @include justify-content(flex-start);
   @include flex-flow(wrap);
-  @include transition();
   @include flexbox();
   margin: #{0} -#{$sideMargin};
   width: $contentPercent + $spacingPercent;

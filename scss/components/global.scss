@@ -20,7 +20,7 @@
         height: 4px;
         border-radius: 50%;
         position: absolute;
-        top: rem(15);
+        top: 15px;
         left: 0;
       }
     }
@@ -193,7 +193,7 @@ div.wpcf7 {
       top: 100%;
       visibility: hidden;
       opacity: 0;
-      @include transition();
+      transition: all 0.4s ease;
       background: $bg;
       min-width: 100%;
       pointer-events: none;
@@ -208,13 +208,13 @@ div.wpcf7 {
           font-weight: 700;
           white-space: nowrap;
           &:hover {
-            background: darken($bg, 10%);
+            background: $bg;
           }
         }
         &:hover,
         &.current-menu-item {
           > a {
-            background: darken($bg, 10%);
+            background: $bg;
           }
         }
       }
@@ -256,9 +256,8 @@ $lineColor: #fff;
     width: calc(100% - 10px);
     height: 2px;
     background: $lineColor;
-    -webkit-box-shadow: 0 7px 0 0 $lineColor, 0 -7px 0 0 $lineColor;
     box-shadow: 0 7px 0 0 $lineColor, 0 -7px 0 0 $lineColor;
-    @include transition();
+    transition: all 0.4s ease;
   }
   &:after {
     content: '';
@@ -266,7 +265,7 @@ $lineColor: #fff;
     width: calc(100% - 10px);
     height: 2px;
     background: $lineColor;
-    @include transition();
+    transition: all 0.4s ease;
   }
   &.open {
     &:before {
@@ -292,7 +291,7 @@ $lineColor: #fff;
   z-index: 1;
   padding: 50px 0;
   overflow: auto;
-  @include transition();
+  transition: all 0.4s ease;
   @include transform(translateX(100%));
   @include for-size($md) {
     display: block;
@@ -315,17 +314,17 @@ $lineColor: #fff;
     display: inline-block;
     padding: 5px;
     color: #fff;
-    @include transition();
+    transition: all 0.4s ease;
   }
   .arrow {
     display: inline-block;
     height: 18px;
     width: 18px;
     vertical-align: middle;
-    @include transition();
+   transition: all 0.4s ease;
     path {
       color: #fff;
-      @include transition();
+      transition: all 0.4s ease;
     }
     &.active {
       @include transform(rotateZ(90deg));
@@ -355,7 +354,7 @@ $lineColor: #fff;
     z-index: -1;
     opacity: 0;
     visibility: hidden;
-    @include transition();
+    transition: all 0.4s ease;
 
     button {
       position: absolute;
@@ -366,7 +365,7 @@ $lineColor: #fff;
       background: transparent;
       color: #252525;
       font-size: 20px;
-      @include transition();
+      transition: all 0.4s ease;
       &:hover {
         color: $hover;
       }
@@ -397,14 +396,14 @@ $lineColor: #fff;
     cursor: pointer;
     &::before {
       @include center();
-      @include transition();
+      transition: all 0.4s ease;
       content: 'x';
       font-size: 24px;
       opacity: 0;
       color: $c;
     }
     svg {
-      @include transition();
+      transition: all 0.4s ease;
     }
     &:hover {
       svg {
@@ -440,7 +439,7 @@ $lineColor: #fff;
   a {
     display: inline-block;
     position: relative;
-    @include transition();
+    transition: all 0.4s ease;
     font-size: 20px;
     margin: 5px;
     width: 40px;
@@ -503,7 +502,7 @@ $lineColor: #fff;
   border: none;
   border-bottom: 2px solid $bg;
   background: transparent;
-  @include transition();
+  transition: all 0.4s ease;
   .label {
     line-height: $inputH;
     height: $inputH;
@@ -528,15 +527,15 @@ $lineColor: #fff;
       border-style: solid;
       border-width: 6px 4px 0 4px;
       border-color: $bg transparent transparent transparent;
-      @include transition();
+      transition: all 0.4s ease;
     }
   }
   .selectric-hover &,
   .selectric-focus & {
-    border-color: darken($bg, 20%);
+    border-color: $bg;
     .button {
       &::before {
-        color: darken($bg, 20%);
+        color: $bg;
       }
     }
   }
@@ -547,7 +546,7 @@ $lineColor: #fff;
     margin: 0;
     li {
       padding: 5px 12px;
-      @include transition();
+      transition: all 0.4s ease;
       &::before {
         display: none;
       }
@@ -565,7 +564,6 @@ $lineColor: #fff;
   margin-bottom: 20px;
   a {
     color: $c;
-    @include hover($hover);
   }
 }
 
@@ -595,11 +593,11 @@ $lineColor: #fff;
     height: 12px;
   }
   .current {
-    background: lighten($bg, 20%);
+    background: $bg;
   }
   a.page-numbers {
     &:hover {
-      background: lighten($bg, 20%);
+      background: $bg;
     }
   }
   .prev,
@@ -637,9 +635,6 @@ $lineColor: #fff;
   .post-title {
     @extend h3;
     display: block;
-  }
-  .more {
-    @include hover($hover);
   }
 }
 

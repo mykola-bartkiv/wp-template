@@ -1,4 +1,4 @@
-<?php get_header(); /* Template Name: Example */ ?>
+<?php /* Template Name: Example */ get_header(); ?>
     <section class="content space">
         <div class="wrap">
 	  <?php if ( '' !== get_post()->post_content ) : ?>
